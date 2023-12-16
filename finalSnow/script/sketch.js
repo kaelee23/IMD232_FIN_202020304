@@ -15,7 +15,7 @@ function draw() {
   fill(127);
   textSize(15);
   textAlign(CENTER, CENTER);
-  text('마우스를 빨간점으로 옮겨서 눈을 뭉쳐보자', width / 2, height - 20);
+  text('마우스를 빨간점으로 다가가면서 눈을 뭉쳐보자', width / 2, height - 20);
 
   let canvasCenterX = width / 2;
   let canvasCenterY = height / 2;

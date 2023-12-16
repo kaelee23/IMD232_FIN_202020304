@@ -12,7 +12,7 @@ function draw() {
   fill(127);
   textSize(15);
   textAlign(CENTER, CENTER);
-  text('마우스를 이동해 비를 피해보자', width / 2, height - 20);
+  text('마우스를 이동해 비를 튕겨보자', width / 2, height - 20);
   circle(mouseX, mouseY, 50);
 
   if (random(1) < 1) {
