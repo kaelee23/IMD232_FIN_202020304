@@ -10,7 +10,7 @@ function setup() {
 
 function draw() {
   stroke(0);
-  strokeWeight(2);
+  strokeWeight(3);
   fill(127);
   textSize(15);
   textAlign(CENTER, CENTER);
@@ -23,8 +23,6 @@ function draw() {
   background(10, 10);
 
   if (lineObj) {
-    strokeWeight(1);
-
     stroke(143, 188, 143);
     line(lineObj.x1, lineObj.y1, lineObj.x2, lineObj.y2);
     lineObj.y1 += 3;
@@ -37,12 +35,12 @@ function draw() {
 
   for (let x = 0; x <= width; x = x + 30) {
     for (let y = 0; y <= height; y = y + 30) {
-      let xAngle = map(mouseX, 0, width, -4 * PI, 4 * PI, true);
-      let yAngle = map(mouseY, 0, height, -4 * PI, 4 * PI, true);
+      let xAngle = map(mouseX, 0, width, -2 * PI, 2 * PI, true);
+      let yAngle = map(mouseY, 0, height, -2 * PI, 2 * PI, true);
 
       let angle = xAngle * (x / width) + yAngle * (y / height);
 
-      let length = random(10, 40);
+      let length = random(10, 50);
 
       let myX = x + length * cos(2 * PI * t + angle);
       let myY = y + length * sin(2 * PI * t + angle);
@@ -54,14 +52,14 @@ function draw() {
     }
   }
 
-  t = t + 0.01;
+  t = t + 0.005;
 }
 
 function mouseClicked() {
   let x = mouseX;
   let y = mouseY;
-  let xAngle = map(x, 0, width, -4 * PI, 4 * PI, true);
-  let yAngle = map(y, 0, height, -4 * PI, 4 * PI, true);
+  let xAngle = map(x, 0, width, -2 * PI, 2 * PI, true);
+  let yAngle = map(y, 0, height, -2 * PI, 2 * PI, true);
   let angle = xAngle + yAngle;
 
   y -= 10;
