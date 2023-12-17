@@ -7,13 +7,30 @@ function setup() {
 
   storeInitialPositions();
 }
+function mouseClicked() {
+  shuffleCharacterPositions();
+}
+
+function shuffleCharacterPositions() {
+  for (let i = circlePositions.length - 1; i > 0; i--) {
+    const j = floor(random(i + 1));
+    [circlePositions[i], circlePositions[j]] = [
+      circlePositions[j],
+      circlePositions[i],
+    ];
+  }
+}
 
 function draw() {
   background(0);
   fill(127);
   textSize(15);
   textAlign(CENTER, CENTER);
-  text('마우스를 움직여 바람을 일으켜보자', width / 2, height - 20);
+  text(
+    '마우스를 클릭해 글자 위치가 랜덤하게 왔다갔다 하게 하고, 마우스를 움직여 바람을 일으켜보자',
+    width / 2,
+    height - 20
+  );
 
   circle(mouseX, mouseY, 50);
 
