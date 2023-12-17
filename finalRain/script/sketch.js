@@ -18,7 +18,7 @@ function draw() {
   if (random(1) < 1) {
     let x = random(width);
     let y = -10;
-    let rotationSpeed = random(-0.2, 0.5);
+    let rotationSpeed = random(-0.2, 1);
     particles.push(new Particle(x, y, rotationSpeed));
   }
 
