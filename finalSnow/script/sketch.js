@@ -1,10 +1,10 @@
-let wPosition;
+let snowP;
 
 function setup() {
   setCanvasContainer('canvas', 3, 2, true);
   background(0);
 
-  wPosition = createVector(width / 2, height / 2);
+  snowP = createVector(width / 2, height / 2);
 }
 
 function draw() {
