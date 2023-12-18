@@ -24,13 +24,13 @@ function draw() {
   let canvasCenterX = width / 2;
   let canvasCenterY = height / 2;
 
-  let distance = dist(mouseX, mouseY, canvasCenterX, canvasCenterY);
+  let dis = dist(mouseX, mouseY, canvasCenterX, canvasCenterY);
 
-  let spread = map(distance, 0, width / 2, 0, 300);
+  let spread = map(dis, 0, width / 2, 0, 300);
 
-  drawCharacterSnow(canvasCenterX, canvasCenterY, spread);
+  drawSnow(canvasCenterX, canvasCenterY, spread);
 }
-function drawCharacterSnow(x, y, spread) {
+function drawSnow(x, y, spread) {
   fill(255);
 
   for (let i = 0; i < 10; i++) {
