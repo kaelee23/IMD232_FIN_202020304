@@ -79,18 +79,17 @@ function updateCirclePos() {
     // moveBack.mult(0.05);
     //circlePos[i].add(moveBack);
     // }
-    //}
-    //}
+
     let maxDis = 100;
 
     if (dis < maxDis) {
-      let direction = createVector(
+      let direct = createVector(
         circlePos[i].x - mouseX,
         circlePos[i].y - mouseY
       );
-      direction.normalize();
-      direction.mult(maxDis - dis);
-      circlePos[i].add(direction);
+      direct.normalize();
+      direct.mult(maxDis - dis);
+      circlePos[i].add(direct);
     } else {
       let initialPos = createVector(((i + 1) * width) / 5, height / 2);
       let moveBack = p5.Vector.sub(initialPos, circlePos[i]);
