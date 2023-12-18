@@ -1,3 +1,5 @@
+//파도에서 레퍼런스를 얻었습니다.
+//https://p5js.org/ko/examples/interaction-wavemaker.html
 let t = 0;
 let lineObj = null;
 
