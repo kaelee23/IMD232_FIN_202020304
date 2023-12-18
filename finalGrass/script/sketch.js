@@ -1,7 +1,7 @@
 //파도에서 레퍼런스를 얻었습니다.
 //https://p5js.org/ko/examples/interaction-wavemaker.html
 let t = 0;
-let lineObj = null;
+let lineGrass = null;
 
 function setup() {
   setCanvasContainer('canvas', 3, 2, true);
@@ -24,14 +24,14 @@ function draw() {
 
   background(10, 10);
 
-  if (lineObj) {
+  if (lineGrass) {
     stroke(143, 188, 143);
-    line(lineObj.x1, lineObj.y1, lineObj.x2, lineObj.y2);
-    lineObj.y1 += 3;
-    lineObj.y2 += 3;
+    line(lineGrass.x1, lineGrass.y1, lineGrass.x2, lineGrass.y2);
+    lineGrass.y1 += 3;
+    lineGrass.y2 += 3;
 
-    if (lineObj.y1 > height || lineObj.y2 > height) {
-      lineObj = null;
+    if (lineGrass.y1 > height || lineGrass.y2 > height) {
+      lineGrass = null;
     }
   }
 
@@ -71,7 +71,7 @@ function mouseClicked() {
   let myX = x + length * cos(2 * PI * t + angle);
   let myY = y + length * sin(2 * PI * t + angle);
 
-  lineObj = {
+  lineGrass = {
     x1: x,
     y1: y,
     x2: myX,
