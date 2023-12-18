@@ -1,3 +1,4 @@
+// gpt의 도움을 얻어서 작성하였습니다.
 let circlePos = [];
 
 function setup() {
@@ -61,25 +62,6 @@ function updateCirclePos() {
     let dis = dist(mouseX, mouseY, circlePos[i].x, circlePos[i].y);
 
     //이 부분도 부드럽게 이동하기 위해 gpt의 도움을 받았습니다.
-    // let maxDistance = 100;
-
-    // 마우스와 각 글자 사이의 거리가 일정 값 이하인 경우
-    //if (distance < maxDistance) {
-    //let direction = createVector(
-    //circlePos[i].x - mouseX,
-    // circlePos[i].y - mouseY
-    //);
-    //direction.normalize();
-    //direction.mult(maxDistance - distance);
-    //circlePos[i].add(direction); // 글자를 마우스 방향으로 이동
-    //} else {
-    // 일정 거리 이상인 경우 초기 위치로 부드럽게 이동
-    //let initialPosition = createVector(((i + 1) * width) / 5, height / 2);
-    //let moveBack = p5.Vector.sub(initialPosition, circlePos[i]);
-    // moveBack.mult(0.05);
-    //circlePos[i].add(moveBack);
-    // }
-
     let maxDis = 100;
 
     if (dis < maxDis) {
