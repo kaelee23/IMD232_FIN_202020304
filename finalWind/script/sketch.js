@@ -5,20 +5,28 @@ function setup() {
 
   background(0);
 
-  //여기서부터
   wordPlace();
 }
-function mouseClicked() {
-  shuffleCharacterPositions();
-}
+//글자가 셔플하는 부분은 gpt의 도움을 얻었습니다.
+////function mouseClicked() {
+// shuffleCharacterPositions(); // 마우스 클릭 시 글자의 위치를 랜덤하게 섞는 함수 호출
+//}
 
-function shuffleCharacterPositions() {
+//function shuffleCharacterPositions() {
+//for (let i = circlePos.length - 1; i > 0; i--) {
+//const j = floor(random(i + 1));
+// [circlePos[i], circlePos[j]] = [circlePos[j], circlePos[i]]; // Fisher-Yates 알고리즘을 사용하여 배열을 섞//음
+// }
+//}
+function mouseClicked() {
+  shuffleWord();
+}
+function shuffleWord() {
   for (let i = circlePos.length - 1; i > 0; i--) {
     const j = floor(random(i + 1));
     [circlePos[i], circlePos[j]] = [circlePos[j], circlePos[i]];
   }
 }
-//여기까지 gpt의 도움을 받았습니다.
 
 function draw() {
   background(0);
@@ -50,21 +58,42 @@ function wordPlace() {
 
 function updateCirclePos() {
   for (let i = 0; i < circlePos.length; i++) {
-    let distance = dist(mouseX, mouseY, circlePos[i].x, circlePos[i].y);
+    let dis = dist(mouseX, mouseY, circlePos[i].x, circlePos[i].y);
 
-    let maxDistance = 100;
+    //이 부분도 부드럽게 이동하기 위해 gpt의 도움을 받았습니다.
+    // let maxDistance = 100;
 
-    if (distance < maxDistance) {
+    // 마우스와 각 글자 사이의 거리가 일정 값 이하인 경우
+    //if (distance < maxDistance) {
+    //let direction = createVector(
+    //circlePos[i].x - mouseX,
+    // circlePos[i].y - mouseY
+    //);
+    //direction.normalize();
+    //direction.mult(maxDistance - distance);
+    //circlePos[i].add(direction); // 글자를 마우스 방향으로 이동
+    //} else {
+    // 일정 거리 이상인 경우 초기 위치로 부드럽게 이동
+    //let initialPosition = createVector(((i + 1) * width) / 5, height / 2);
+    //let moveBack = p5.Vector.sub(initialPosition, circlePos[i]);
+    // moveBack.mult(0.05);
+    //circlePos[i].add(moveBack);
+    // }
+    //}
+    //}
+    let maxDis = 100;
+
+    if (dis < maxDis) {
       let direction = createVector(
         circlePos[i].x - mouseX,
         circlePos[i].y - mouseY
       );
       direction.normalize();
-      direction.mult(maxDistance - distance);
+      direction.mult(maxDis - dis);
       circlePos[i].add(direction);
     } else {
-      let initialPosition = createVector(((i + 1) * width) / 5, height / 2);
-      let moveBack = p5.Vector.sub(initialPosition, circlePos[i]);
+      let initialPos = createVector(((i + 1) * width) / 5, height / 2);
+      let moveBack = p5.Vector.sub(initialPos, circlePos[i]);
       moveBack.mult(0.05);
       circlePos[i].add(moveBack);
     }
