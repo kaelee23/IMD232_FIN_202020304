@@ -1,4 +1,4 @@
-//particle 과제를 활용했습니다.
+//6차과제 step1 particle 과제를 활용했습니다.
 //https://editor.p5js.org/natureofcode/sketches/H4TMayNak
 let particles = [];
 
