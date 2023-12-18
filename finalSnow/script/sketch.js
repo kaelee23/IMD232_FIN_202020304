@@ -15,23 +15,27 @@ function draw() {
   fill(127);
   textSize(15);
   textAlign(CENTER, CENTER);
-  text('마우스를 빨간점으로 다가가면서 눈을 뭉쳐보자', width / 2, height - 20);
+  text(
+    '마우스를 빨간점으로 다가가서 눈을 뭉치거나 멀리해서 퍼트려보자',
+    width / 2,
+    height - 20
+  );
 
   let canvasCenterX = width / 2;
   let canvasCenterY = height / 2;
 
   let distance = dist(mouseX, mouseY, canvasCenterX, canvasCenterY);
 
-  let dispersal = map(distance, 0, width / 2, 0, 300);
+  let spread = map(distance, 0, width / 2, 0, 300);
 
-  drawCharacterSnow(canvasCenterX, canvasCenterY, dispersal);
+  drawCharacterSnow(canvasCenterX, canvasCenterY, spread);
 }
-function drawCharacterSnow(x, y, dispersal) {
+function drawCharacterSnow(x, y, spread) {
   fill(255);
 
   for (let i = 0; i < 10; i++) {
-    let xOffset = random(-dispersal, dispersal);
-    let yOffset = random(-dispersal, dispersal);
+    let xOffset = random(-spread, spread);
+    let yOffset = random(-spread, spread);
 
     //  ㄴ
     ellipse(constrain(x - 20 + xOffset, 0, width), y - 35 - yOffset, 10);
