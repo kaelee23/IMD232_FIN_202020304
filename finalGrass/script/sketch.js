@@ -23,9 +23,16 @@ function draw() {
   );
 
   background(10, 10);
-
+  //이 부분 gpt의 도움을 부분 부분 받았습니다.
   if (lineGrass) {
     stroke(143, 188, 143);
+    //line(lineObj.x1, lineObj.y1, lineObj.x2, lineObj.y2);
+    //    lineObj.y1 += 5; // 선이 아래로 이동하는 속도 조절
+    //   lineObj.y2 += 5; // 선이 아래로 이동하는 속도 조절
+
+    // 선이 캔버스 아래로 벗어나면 초기화
+    //   if (lineObj.y1 > height || lineObj.y2 > height) {
+    //   lineObj = null;
     line(lineGrass.x1, lineGrass.y1, lineGrass.x2, lineGrass.y2);
     lineGrass.y1 += 3;
     lineGrass.y2 += 3;
