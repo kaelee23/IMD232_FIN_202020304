@@ -10,9 +10,6 @@ class Particle {
 
     const rainColor = random(5, 255);
     this.color = color(rainColor, rainColor, rainColor);
-
-    this.rotation = 0;
-    this.rotationSp = rotationSp;
     this.lineLength = random(0.2, 1.3);
   }
 
@@ -35,7 +32,7 @@ class Particle {
   display() {
     push();
     translate(this.pos.x, this.pos.y);
-    rotate(this.rotation);
+
     stroke(
       this.color.levels[0],
       this.color.levels[1],
