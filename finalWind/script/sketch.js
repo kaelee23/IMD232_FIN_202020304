@@ -61,7 +61,7 @@ function updateCirclePos() {
   for (let i = 0; i < circlePos.length; i++) {
     let dis = dist(mouseX, mouseY, circlePos[i].x, circlePos[i].y);
 
-    //이 부분도 부드럽게 이동하기 위해 gpt의 도움을 받았습니다.
+    //이 부분도 부드럽게 이동하기 위해 군데군데 gpt의 도움을 받았습니다.
     let maxDis = 100;
 
     if (dis < maxDis) {
