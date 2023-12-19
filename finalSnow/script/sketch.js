@@ -1,4 +1,4 @@
-// gpt의 도움을 얻어서 작성하였습니다.
+// 군데 군데 gpt의 도움을 얻어서 작성하였습니다.
 let snowP;
 
 function setup() {

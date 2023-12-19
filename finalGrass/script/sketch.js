@@ -1,5 +1,6 @@
-//파도에서 레퍼런스를 얻었습니다.
-//https://p5js.org/ko/examples/interaction-wavemaker.html
+//파도 만들기를 활용하였습니다.
+//Original Code from: https://p5js.org/ko/examples/interaction-wavemaker.html
+//기여: 애티쉬 바티아(Aatish Bhatia), 제작: 댄 와이트(Dan Whyte) Orbiters
 let t = 0;
 let lineGrass = null;
 

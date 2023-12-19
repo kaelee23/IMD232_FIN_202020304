@@ -1,5 +1,6 @@
 //6차과제 step1 particle 과제를 활용했습니다.
-//https://editor.p5js.org/natureofcode/sketches/H4TMayNak
+// Original Code from: https://editor.p5js.org/natureofcode/sketches/H4TMayNak
+// Daniel Shiffman
 let particles = [];
 
 function setup() {
